@@ -5,13 +5,18 @@
 // (0 - 0.333...) (0.344.. - 0.666..) (0.0677.. - 0.999...) double check math
 //randomly returns sting values of rock paper scissor
 
-let rock = "rock";
-let paper = "paper";
-let scissor = "scissors";
+const rock = "rock";
+const paper = "paper";
+const scissors = "scissors";
 
 function getComputerChoice() {
     let random = Math.random();
-    if (random <= 0.333) {
-        console.log(rock);
+    if (random <= 0.33) {
+        return rock;
+    } else if (random <= 0.66) {
+        return paper;
+    } else {
+        return scissors;
     }
+        
 }
