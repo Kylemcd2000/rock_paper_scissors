@@ -9,14 +9,19 @@ const rock = "rock";
 const paper = "paper";
 const scissors = "scissors";
 
+//getComputerchoice() function returns random rock, paper scissor choice
 function getComputerChoice() {
+    // assings a random number variable 
     let random = Math.random();
+    // assigns rock to lower 1/3 random number range
     if (random <= 0.33) {
         return rock;
+    // assigns paper to middle 1/3 random number range    
     } else if (random <= 0.66) {
         return paper;
+    // assigns scissors to upper 1/3 random number range
     } else {
         return scissors;
     }
-        
 }
+
