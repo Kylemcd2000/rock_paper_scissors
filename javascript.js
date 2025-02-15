@@ -13,6 +13,8 @@ const paper = "paper";
 const scissors = "scissors";
 let HumanChoice;
 let ComputerChoice;
+let HumanScore = 0;
+let ComputerScore = 0;
 
 //getComputerchoice() function returns random rock, paper scissor choice
 function getComputerChoice() {
