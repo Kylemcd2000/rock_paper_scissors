@@ -66,3 +66,13 @@ function getHumanChoice() {
     alert("Please enter a valid choice.");
    }
 }
+
+//PSEUDOCODE playRound(1,2) PSEUDOCODE
+//use getHumanChoice and getComputerChoice to get choices for comparison
+//
+
+function playRound(HumanChoice, ComputerChoice) {
+     if (HumanChoice === rock && ComputerChoice === paper) {
+        console.log(`You win! ${HumanChoice} beats ${ComputerChoice}`);
+     }
+}
