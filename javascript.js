@@ -15,7 +15,6 @@ let HumanChoice;
 let ComputerChoice;
 let HumanScore = 0;
 let ComputerScore = 0;
-
 //getComputerchoice() function returns random rock, paper scissor choice
 function getComputerChoice() {
     // assings a random number variable 
@@ -72,7 +71,25 @@ function getHumanChoice() {
 //
 
 function playRound(HumanChoice, ComputerChoice) {
-     if (HumanChoice === rock && ComputerChoice === paper) {
-        console.log(`You win! ${HumanChoice} beats ${ComputerChoice}`);
-     }
+    if (HumanChoice === ComputerChoice) {
+        console.log(`It's a draw!`);
+    }else if (HumanChoice != rock
+        && HumanChoice != paper
+        && HumanChoice != scissors) {
+            console.log (`An invalid choice as been given`);
+    }else {
+        if (HumanChoice === rock 
+        && ComputerChoice === scissors) {
+            console.log(`you win!`);
+        }else if (HumanChoice === paper
+        && ComputerChoice === rock) {
+            console.log(`you win!`)
+        }else if (HumanChoice === scissors
+            && ComputerChoice === paper) {
+            console.log(`you win!`); 
+            
+        } else {
+            console.log (`You lose!`)
+        }
+    }
 }
