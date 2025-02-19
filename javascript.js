@@ -77,22 +77,26 @@ function playRound(HumanChoice, ComputerChoice) {
         && HumanChoice != paper
         && HumanChoice != scissors) {
             console.log (`An invalid choice as been given`);
+            i -= i;
     }else {
-        if (HumanChoice === rock 
-        && ComputerChoice === scissors) {
+        if ((HumanChoice === rock && ComputerChoice === scissors)
+            || (HumanChoice === paper && ComputerChoice === rock)
+            || (HumanChoice === scissors && ComputerChoice === paper)) {
             console.log(`you win! ${HumanChoice} beats ${ComputerChoice}`);
-        }else if (HumanChoice === paper
-        && ComputerChoice === rock) {
-            console.log(`you win! ${HumanChoice} beats ${ComputerChoice}`);
-        }else if (HumanChoice === scissors
-            && ComputerChoice === paper) {
-            console.log(`you win! ${HumanChoice} beats ${ComputerChoice}`);
+            return ++HumanScore;
         } else {
             console.log (`You lose! ${ComputerChoice} beats ${HumanChoice}`);
+            return ++ComputerScore;
         }
     }
-    console.log(`Your choice: ${HumanChoice} || Computer's choice: ${ComputerChoice}`)
     
 }
 
-playRound(getHumanChoiced(),getComputerChoice())
+function playGame() {
+    for (i = 0; i < 5; ++i) {
+        playRound(getHumanChoice(), getComputerChoice());
+        console.log(`Your choice: ${HumanChoice} || Computer's choice: ${ComputerChoice}`);
+        console.log(`Your Score ${HumanScore} || Computer Score ${ComputerScore}`);
+    }
+
+}
