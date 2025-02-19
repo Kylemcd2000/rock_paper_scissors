@@ -80,16 +80,19 @@ function playRound(HumanChoice, ComputerChoice) {
     }else {
         if (HumanChoice === rock 
         && ComputerChoice === scissors) {
-            console.log(`you win!`);
+            console.log(`you win! ${HumanChoice} beats ${ComputerChoice}`);
         }else if (HumanChoice === paper
         && ComputerChoice === rock) {
-            console.log(`you win!`)
+            console.log(`you win! ${HumanChoice} beats ${ComputerChoice}`);
         }else if (HumanChoice === scissors
             && ComputerChoice === paper) {
-            console.log(`you win!`); 
-            
+            console.log(`you win! ${HumanChoice} beats ${ComputerChoice}`);
         } else {
-            console.log (`You lose!`)
+            console.log (`You lose! ${ComputerChoice} beats ${HumanChoice}`);
         }
     }
+    console.log(`Your choice: ${HumanChoice} || Computer's choice: ${ComputerChoice}`)
+    
 }
+
+playRound(getHumanChoiced(),getComputerChoice())
