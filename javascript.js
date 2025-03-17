@@ -46,7 +46,7 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     //ask for input from player
-   HumanChoice = prompt("Rock, Paper or Scissors?");
+   HumanChoice = prompt(`Round ${i+1}: Rock, Paper or Scissors?`);
    //makes player input case-insensitive
    HumanChoice = HumanChoice.toLowerCase();
    //assigns player choice as rock
@@ -77,7 +77,7 @@ function playRound(HumanChoice, ComputerChoice) {
         && HumanChoice != paper
         && HumanChoice != scissors) {
             console.log (`An invalid choice as been given`);
-            i -= i;
+            i = i - 1;
     }else {
         if ((HumanChoice === rock && ComputerChoice === scissors)
             || (HumanChoice === paper && ComputerChoice === rock)
@@ -93,10 +93,24 @@ function playRound(HumanChoice, ComputerChoice) {
 }
 
 function playGame() {
+    HumanScore = 0;
+    ComputerScore = 0;
     for (i = 0; i < 5; ++i) {
         playRound(getHumanChoice(), getComputerChoice());
         console.log(`Your choice: ${HumanChoice} || Computer's choice: ${ComputerChoice}`);
         console.log(`Your Score ${HumanScore} || Computer Score ${ComputerScore}`);
     }
+
+    if (i === 5) {
+        if (HumanScore === ComputerScore) {
+            alert (`It's a draw!\nHuman Score: ${HumanScore}\nComputer Score: ${ComputerScore}`)
+        } else if (HumanScore > ComputerScore) {
+            alert (`Congratulations! You won!\nHuman Score: ${HumanScore}\nComputer Score: ${ComputerScore}`)
+        } else {
+            alert (`Oh no! You lost, how embarrassing!\nHuman Score: ${HumanScore}\nComputer Score: ${ComputerScore}`)
+        }
+    }
+
+
 
 }
